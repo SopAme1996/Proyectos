@@ -47,3 +47,13 @@
     position: absolute;
     transform: rotate(40deg);
 }
+
+form .avatar {
+    width: 55px;
+    margin-bottom: 15px;
+}
+
+.menu .avatar {
+    width: 30px;
+    border-radius: 50px;
+}

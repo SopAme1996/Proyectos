@@ -50,7 +50,6 @@
                     <ul class="navbar-nav ml-auto menu">
                         <!-- Autenticacion del usuario -->
                         @guest
-
                         @if (Route::has('login'))
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
@@ -64,12 +63,26 @@
                         @endif
 
                         @else
+                        <li class="nav-item">
+                            <a class="nav-link" href="">{{ __('Home') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">{{ __('upload image') }}</a>
+                        </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                @include('imagen.imagen')
                                 {{Auth::user()->name}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                                <a class="dropdown-item" href="">
+                                    {{ __('My profile') }}
+                                </a>
+                                <a class="dropdown-item" href="{{ route('setting')}}">
+                                    {{ __('Setting') }}
+                                </a>
+
                                 <a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();
                                                      document.getElementById('logout-form').submit();">
                                     {{ __('Logout') }}
@@ -78,6 +91,7 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
+
 
                             </div>
                         </li>
