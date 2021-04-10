@@ -1,0 +1,33 @@
+@media screen and (max-width: 1024px) {
+    .btn_menu {
+        display: flex;
+    }
+
+    .menu_app {
+        position: absolute;
+        border: 1px red solid;
+        height: 100vh;
+        z-index: 10;
+        top: 0;
+        right: -50%;
+        width: 50%;
+        background: rgba(52, 58, 64, 0.9);
+        transition: all 1.5s ease;
+    }
+
+    .menu {
+        margin-top: 56px;
+        padding: 10px;
+    }
+
+    .menu li a {
+        text-align: left;
+        color: white !important;
+    }
+
+    .menu_app.show {
+        right: 0;
+    }
+
+  
+}
