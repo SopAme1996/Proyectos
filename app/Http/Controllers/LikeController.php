@@ -41,4 +41,9 @@ class LikeController extends Controller
              return response()->json(['message' => 'El like no existe']);
         }
     }
+
+    public function likes(){
+        $likes = Like::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(5);
+        return view('like.likes', ['likes' => $likes]);
+    }
 }

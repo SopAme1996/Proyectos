@@ -779,3 +779,33 @@ iframe {
 .btn-success {
     margin-top: 15px;
 }
+
+.margen {
+    margin-top: 20px;
+}
+
+.data-user {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.data-user .avatar {
+    width: 200px;
+    border-radius: 900%;
+    overflow: hidden;
+}
+
+.btn_close {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn_close .icon {
+    font-size: 40px;
+    position: initial;
+}

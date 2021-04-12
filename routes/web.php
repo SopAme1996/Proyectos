@@ -43,3 +43,6 @@ Route::post('/comments/save', [App\Http\Controllers\CommentsController::class, '
 Route::get('/eliminar/comentario/{id}', [App\Http\Controllers\CommentsController::class, 'delete'])->name('comment.delete');
 Route::get('/imagen/like/{image_id}', [App\Http\Controllers\LikeController::class, 'like'])->name('image.like');
 Route::get('/imagen/dislike/{image_id}', [App\Http\Controllers\LikeController::class, 'dislike'])->name('image.dislike');
+Route::get('/likes', [App\Http\Controllers\LikeController::class, 'likes'])->name('like.likes');
+Route::get('/user/profile/{id}', [App\Http\Controllers\UserController::class, 'profile'])->name('user.profile');
+Route::get('/delete/image/{id}', [App\Http\Controllers\ImageController::class, 'delete'])->name('image.delete');

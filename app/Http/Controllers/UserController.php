@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Auth;
@@ -66,5 +66,10 @@ class UserController extends Controller
     public function getImage($fillname){
         $file = Storage::disk('users')->get($fillname);
         return new Response($file, 200);
+    }
+
+    public function profile($id){
+        $user = User::find($id);
+        return view('user.profile', ['user' => $user]);
     }
 }

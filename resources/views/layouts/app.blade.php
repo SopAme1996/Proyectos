@@ -66,10 +66,15 @@
 
                         @else
                         <li class="nav-item">
-                            <a class="nav-link" href="{{route('home') }}">{{ __('Home') }}</a>
+                            <a class="nav-link" href="{{route('home') }}">{{ __('Inicio') }}</a>
                         </li>
+
+                         <li class="nav-item">
+                            <a class="nav-link" href="{{route('like.likes') }}">{{ __('Favoritas') }}</a>
+                        </li>
+
                         <li class="nav-item">
-                            <a class="nav-link" href="{{ route('image.create') }}">{{ __('upload image') }}</a>
+                            <a class="nav-link" href="{{ route('image.create') }}">{{ __('Subir Imagen') }}</a>
                         </li>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
@@ -78,7 +83,7 @@
                                 {{Auth::user()->name}}
                             </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                                <a class="dropdown-item" href="">
+                                <a class="dropdown-item" href="{{ route('user.profile', ['id' => Auth::user()->id]) }}">
                                     {{ __('My profile') }}
                                 </a>
                                 <a class="dropdown-item" href="{{ route('setting')}}">
