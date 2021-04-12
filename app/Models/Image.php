@@ -10,10 +10,11 @@ class Image extends Model
     use HasFactory;
 
     protected $table = "images";
+    public $incrementing = false;
 
     //Relacion One To Many / de uno a muhcos
     public function comments(){
-        return $this->hasMany('App\Models\Comment');
+        return $this->hasMany('App\Models\Comment')->orderBy('created_at','desc');
     }
 
       //Relacion One To Many / de uno a muhcos

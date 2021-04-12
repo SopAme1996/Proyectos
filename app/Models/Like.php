@@ -10,6 +10,7 @@ class Like extends Model
     use HasFactory;
 
     protected $table = 'likes';
+    public $incrementing = false;
 
     public function users(){
         return $this->belongsTo('App\Models\User', 'user_id');

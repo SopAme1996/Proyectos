@@ -4,9 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            @if(session('message'))
-            <div class="alert alert-success">{{session('message')}}</div>
-            @endif
+            @include('include.mensaje')
             <div class="card">
                 <div class="card-header">{{ __('Setting') }}</div>
 
@@ -82,7 +80,7 @@
                                 class="col-md-4 col-form-label text-md-right">{{ __('Image') }}</label>
 
                             <div class="col-md-6">
-                                @include('imagen.imagen')
+                                @include('include.imagen')
                                 <input id="image_path" type="file"
                                     class="form-control @error('image_path') is-invalid @enderror" name="image_path"
                                     required>

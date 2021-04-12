@@ -10,6 +10,7 @@ class Comment extends Model
     use HasFactory;
 
       protected $table = "comments";
+      public $incrementing = false;
 
       //Relacion Many To One
       public function users(){

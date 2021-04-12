@@ -32,7 +32,8 @@ class UserController extends Controller
             'name' => ['required', 'string', 'max:255'],
             'surname' => ['required', 'string', 'max:255'],
             'nick' => ['required', 'string', 'max:255','unique:users,nick,'.$id],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.$id]
+            'email' => ['required', 'string', 'email', 'max:255', 'unique:users,email,'.$id],
+            'image_path' => ['mimes:jpg,jpeg,png,gif'],
         ]);
         
         //Recoger datos del formulario

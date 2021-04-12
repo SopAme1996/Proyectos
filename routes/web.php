@@ -35,3 +35,11 @@ Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('ho
 Route::get('/configuracion', [App\Http\Controllers\UserController::class, 'config'])->name('setting');
 Route::post('/user/edit', [App\Http\Controllers\UserController::class, 'update'])->name('user.update');
 Route::get('/user/avatar/{filename}', [App\Http\Controllers\UserController::class, 'getImage'])->name('user.avatar');
+Route::get('/subir_imagen', [App\Http\Controllers\ImageController::class, 'create'])->name('image.create');
+Route::post('/image/save', [App\Http\Controllers\ImageController::class, 'save'])->name('image.save');
+Route::get('/image/cargada/{filename}', [App\Http\Controllers\ImageController::class, 'getImage'])->name('image.publicacion');
+Route::get('/imagen/{id}', [App\Http\Controllers\ImageController::class, 'detail'])->name('image.detail');
+Route::post('/comments/save', [App\Http\Controllers\CommentsController::class, 'save'])->name('comments.detail');
+Route::get('/eliminar/comentario/{id}', [App\Http\Controllers\CommentsController::class, 'delete'])->name('comment.delete');
+Route::get('/imagen/like/{image_id}', [App\Http\Controllers\LikeController::class, 'like'])->name('image.like');
+Route::get('/imagen/dislike/{image_id}', [App\Http\Controllers\LikeController::class, 'dislike'])->name('image.dislike');
