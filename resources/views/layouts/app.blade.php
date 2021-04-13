@@ -11,7 +11,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src= 'https://code.jquery.com/jquery-3.5.1.min.js' ></script>
+    <script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
         integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
     </script>
@@ -69,13 +69,27 @@
                             <a class="nav-link" href="{{route('home') }}">{{ __('Inicio') }}</a>
                         </li>
 
-                         <li class="nav-item">
+                        <li class="nav-item">
                             <a class="nav-link" href="{{route('like.likes') }}">{{ __('Favoritas') }}</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{route('user.index') }}">{{ __('Perfiles') }}</a>
                         </li>
 
                         <li class="nav-item">
                             <a class="nav-link" href="{{ route('image.create') }}">{{ __('Subir Imagen') }}</a>
                         </li>
+
+                        <form action="{{ route('user.index') }}" method="get" id="buscador">
+                            <div class="search">
+                                <div class="form-outline">
+                                    <input type="search" class="form-control" id='search' required />
+                                </div>
+                                <button class="btn btn-primary">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </form>
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

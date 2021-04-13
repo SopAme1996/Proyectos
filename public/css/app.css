@@ -809,3 +809,17 @@ iframe {
     font-size: 40px;
     position: initial;
 }
+
+.otra {
+    width: 100px;
+}
+
+.tittle {
+    margin-top: 20px !important;
+}
+
+.search {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

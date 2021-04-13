@@ -10,6 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
+
                 {{ $message}}
             </div>
             <div class="modal-footer">

@@ -26,7 +26,7 @@ $(document).ready(function () {
             .unbind("click")
             .click(function () {
                 $(this).addClass("btn-like").removeClass("btn-dislike");
-                $(this).attr("src", url+"img/black.ico");
+                $(this).attr("src", url + "img/black.ico");
 
                 $.ajax({
                     url: url + "imagen/dislike/" + $(this).data("id"),
@@ -40,4 +40,11 @@ $(document).ready(function () {
             });
     }
     dislike();
+
+    $("#buscador").submit(function () {
+        $(this).attr(
+            "action",
+            url + "user/index/" + $("#buscador #search").val()
+        );
+    });
 });
