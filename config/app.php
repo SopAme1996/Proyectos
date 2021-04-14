@@ -52,9 +52,9 @@ return [
     |
     */
 
-    'url' => env('APP_URL', 'http://localhost'),
+    'url' => env('APP_URL', 'http://stark-shelf-71053.herokuapp.com/'),
 
-    'asset_url' => env('ASSET_URL','http://stark-shelf-71053.herokuapp.com/'),
+    'asset_url' => env('ASSET_URL',null),
 
     /*
     |--------------------------------------------------------------------------
