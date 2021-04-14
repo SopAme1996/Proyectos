@@ -796,8 +796,13 @@ iframe {
 
 .data-user .avatar {
     width: 200px;
+    height: 200px;
     border-radius: 900%;
     overflow: hidden;
+}
+
+.data-user .avatar img {
+    object-fit: cover;
 }
 
 .btn_close {
