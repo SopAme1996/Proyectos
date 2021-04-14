@@ -1,7 +1,8 @@
 $(document).ready(function () {
     $(".btn-like").css("cursor", "pointer");
     $(".btn-dislike").css("cursor", "pointer");
-    const url = "http://localhost/CursoPHP/app_red_social/public/";
+    const url = "http://myredsocial199642.herokuapp.com/";
+    // const url = "http://localhost/CursoPHP/app_red_social/public/";
     const contador = $(".count-like");
     function like() {
         $(".btn-like")
