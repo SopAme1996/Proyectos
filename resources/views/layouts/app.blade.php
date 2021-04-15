@@ -80,17 +80,7 @@
                             <a class="nav-link" href="{{ route('image.create') }}">{{ __('Subir Imagen') }}</a>
                         </li>
 
-                        <form action="{{ route('user.index') }}" method="get" id="buscador">
-                            <div class="search">
-                                <div class="form-outline">
-                                    <input type="search" class="form-control" id='search' required />
-                                </div>
-                                <button class="btn btn-primary">
-                                    <i class="fas fa-search"></i>
-                                </button>
-                            </div>
-                        </form>
-                        <li class="nav-item dropdown">
+                        <li class="nav-item dropdown search_li">
                             <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdownMenuLink"
                                 role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 @include('include.imagen')
@@ -112,9 +102,18 @@
                                 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
                                     @csrf
                                 </form>
-
-
                             </div>
+
+                            <form action="{{ route('user.index') }}" method="get" id="buscador">
+                                <div class="search">
+                                    <div class="form-outline">
+                                        <input type="search" class="form-control" id='search' required />
+                                    </div>
+                                    <button class="btn btn-primary">
+                                        <i class="fas fa-search"></i>
+                                    </button>
+                                </div>
+                            </form>
                         </li>
                         @endguest
                     </ul>

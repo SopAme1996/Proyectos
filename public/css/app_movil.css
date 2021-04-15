@@ -17,13 +17,35 @@
     .menu {
         margin-top: 56px;
         padding: 10px;
-    }
-
-    .menu li a {
-        text-align: left;
+        align-items: flex-end;
     }
 
     .menu_app.show {
         right: 0;
+    }
+
+    #buscador {
+        width: 100%;
+    }
+
+    .menu li {
+        width: 100%;
+    }
+    .menu li a {
+        width: 100%;
+        text-align: right;
+        padding-right: 0px;
+    }
+
+    .dropdown-menu {
+        width: 100%;
+    }
+
+    .search_li {
+        background: none;
+    }
+
+    .dropdown-menu {
+        background: none;
     }
 }
