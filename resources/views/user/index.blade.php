@@ -10,7 +10,7 @@
 
             <div class="data-user">
                 @if($user->image)
-                <img class="avatar" src="{{ route('user.avatar', ["filename" => $user->image])}}">
+                <img class="avatar" src="{{ route('user.avatar', ["filename" => $user->image_name])}}">
                 @endif
 
                 <div class="user-info">

@@ -1,8 +1,14 @@
 $(document).ready(function () {
     $(".btn-like").css("cursor", "pointer");
     $(".btn-dislike").css("cursor", "pointer");
-    const url = "http://myredsocial199642.herokuapp.com/";
-    // const url = "http://localhost/CursoPHP/app_red_social/public/";
+
+    let url = '';
+    if (location.host == "localhost") {
+        url = "http://localhost/CursoPHP/app_red_social/public/";
+    } else {
+        url = location.protocol + "//" + location.hostname + "/";
+    }
+
     const contador = $(".count-like");
     function like() {
         $(".btn-like")
@@ -13,9 +19,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: url + "imagen/like/" + $(this).data("id"),
                     type: "GET",
-                    success: function (response) {
-                        console.log(response);
-                    },
+                    success: function (response) {},
                 });
                 dislike();
             });
@@ -32,9 +36,7 @@ $(document).ready(function () {
                 $.ajax({
                     url: url + "imagen/dislike/" + $(this).data("id"),
                     type: "GET",
-                    success: function (response) {
-                        console.log(response);
-                    },
+                    success: function (response) {},
                 });
 
                 like();

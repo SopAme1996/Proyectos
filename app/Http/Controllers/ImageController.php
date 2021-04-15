@@ -39,8 +39,9 @@ class ImageController extends Controller
         if($image_path){
              $imagen_full_name = time().$image_path->getClientOriginalName();
              Storage::disk('images')->put($imagen_full_name, File::get($image_path));
+             $image->image = File::get($image_path);
              $image->image_path = $imagen_full_name;
-            }
+        }
         
         //Guardamos la informacion
         $image->id = Uuid::generate()->string;
@@ -50,8 +51,10 @@ class ImageController extends Controller
         return redirect()->route('home')->with(['message'=>'La publicacion se ha realizado correctamente']);
     }
 
-    public function getImage($filename){
-        return new Response(Storage::disk('images')->get($filename), 200);
+    public function getImage($fillname){
+        $image = Image::where('image_path', $fillname)->first();
+        $file = $image->image;
+        return new Response($file, 200);
     }
 
     public function detail($id){

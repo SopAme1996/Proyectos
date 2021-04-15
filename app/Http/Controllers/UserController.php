@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Image;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
@@ -54,17 +55,18 @@ class UserController extends Controller
       if($image_path){
           $image_path_full = time().$image_path->getClientOriginalName();
           Storage::disk('users')->put($image_path_full, File::get($image_path));
-          $user->image = $image_path_full;
+          $user->image = File::get($image_path);
+          $user->image_name =$image_path_full; 
       }
-
       //Ejecutar consulta en la base de datos
       $user->update();
-
       return redirect()->route('setting')->with(['message' =>'Usuario actualizado correctamente']);
     }
 
     public function getImage($fillname){
-        $file = Storage::disk('users')->get($fillname);
+        $user = User::where('image_name', $fillname)->first();
+        $file = $user->image;
+        // $file = Storage::disk('users')->get($fillname);
         return new Response($file, 200);
     }
 
