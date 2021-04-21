@@ -24,26 +24,35 @@ class LikeController extends Controller
         $like->user_id = Auth::user()->id;
         $like->image_id = $image_id;
         $like->save();
-        return response()->json(['like' => $like]);
+        return true;
+        // return response()->json(['like' => $like]);
         }else{
-             return response()->json(['message' => 'El like ya existe']);
+            //  return response()->json(['message' => 'El like ya existe']);
+        return false;
         }
         
     }
 
     public function dislike($image_id){
         $like = Like::where('user_id', Auth::user()->id)->where('image_id', $image_id)->first();
-
         if($like){
         $like->delete();
-        return response()->json(['like' => $like]);
+        return true;
+        // return response()->json(['like' => $like]);
         }else{
-             return response()->json(['message' => 'El like no existe']);
+        return false;
+        //  return response()->json(['message' => 'El like no existe']);
         }
     }
 
     public function likes(){
         $likes = Like::where('user_id', Auth::user()->id)->orderBy('created_at', 'desc')->paginate(5);
         return view('like.likes', ['likes' => $likes]);
+    }
+
+
+    public function countLikes($image_id) {
+        $like = Like::where('image_id', $image_id)->get();
+        return response()->json(['count' => $like]);
     }
 }

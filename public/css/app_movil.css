@@ -48,4 +48,16 @@
     .dropdown-menu {
         background: none;
     }
+
+    .data-user {
+        flex-direction: column-reverse;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .nickname {
+        font-size: 10px;
+    }
 }

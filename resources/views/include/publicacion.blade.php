@@ -40,7 +40,7 @@
               @else
               <img src="{{asset('img/black.ico')}}" data-id="{{$image->id}}" class="btn-like">
               @endif
-              <span class="count-like">{{ count($image->likes) }}</span>
+              <span class="count-like" id="{{ $image->id }}">{{ count($image->likes) }}</span>
               <a href="{{ route('image.detail', ["id" => $image->id])}}" class="btn btn-sm btn-warning  btn_comments">
                   Comentarios
                   ({{ count($image->comments)}})
