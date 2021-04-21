@@ -2,9 +2,9 @@ $(document).ready(function () {
     $(".btn-like").css("cursor", "pointer");
     $(".btn-dislike").css("cursor", "pointer");
 
-    let url = '';
+    let url = "";
     if (location.host == "localhost") {
-        url = "http://localhost/CursoPHP/app_red_social/public/";
+        url = "https://localhost/CursoPHP/app_red_social/public/";
     } else {
         url = location.protocol + "//" + location.hostname + "/";
     }

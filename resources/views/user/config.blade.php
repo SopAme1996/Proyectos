@@ -82,8 +82,7 @@
                             <div class="col-md-6">
                                 @include('include.imagen')
                                 <input id="image_path" type="file"
-                                    class="form-control @error('image_path') is-invalid @enderror" name="image_path"
-                                    required>
+                                    class="form-control @error('image_path') is-invalid @enderror" name="image_path">
 
                                 @error('image_path')
                                 <span class="invalid-feedback" role="alert">

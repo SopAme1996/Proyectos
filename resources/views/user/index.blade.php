@@ -24,10 +24,6 @@
                         perfil</a>
                 </div>
             </div>
-
-            @foreach($user->images as $image)
-            @include('include.publicacion', ['image' => $image])
-            @endforeach
             @endforeach
             <!-- Paginacion -->
             <div class="clearfix"></div>
