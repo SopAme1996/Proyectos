@@ -12,9 +12,6 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-use App\Models\Image as ModelsImage;
-
-
 
 // Route::get('/', function () {
 //     // $images = ModelsImage::all();
