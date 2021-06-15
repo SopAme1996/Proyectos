@@ -27,6 +27,8 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+
+Route::group(['middleware' => ['cors']], function () {
 Auth::routes();
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -45,12 +47,16 @@ Route::get('/delete/image/{id}', [App\Http\Controllers\ImageController::class, '
 Route::get('/imagen/edit/{id}', [App\Http\Controllers\ImageController::class, 'edit'])->name('image.edit');
 Route::post('/imagen/saveEdit', [App\Http\Controllers\ImageController::class, 'saveEdit'])->name('image.saveEdit');
 
+
+
+//CommentCotroller
+Route::post('/comments/save', [App\Http\Controllers\CommentsController::class, 'save'])->name('comments.detail');
+Route::get('/eliminar/comentario/{id}', [App\Http\Controllers\CommentsController::class, 'delete'])->name('comment.delete');
+
+
 //LikeController
 Route::get('/imagen/like/{image_id}', [App\Http\Controllers\LikeController::class, 'like'])->name('image.like');
 Route::get('/imagen/dislike/{image_id}', [App\Http\Controllers\LikeController::class, 'dislike'])->name('image.dislike');
 Route::get('/likes', [App\Http\Controllers\LikeController::class, 'likes'])->name('like.likes');
 Route::get('/countLikes/{image_id}', [App\Http\Controllers\LikeController::class, 'countLikes'])->name('like.countlikes');
-
-//CommentCotroller
-Route::post('/comments/save', [App\Http\Controllers\CommentsController::class, 'save'])->name('comments.detail');
-Route::get('/eliminar/comentario/{id}', [App\Http\Controllers\CommentsController::class, 'delete'])->name('comment.delete');
+});

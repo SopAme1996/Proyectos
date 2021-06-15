@@ -4,11 +4,12 @@ $(document).ready(function () {
 
     let url = "";
     if (location.host == "localhost") {
-        url = "https://localhost/CursoPHP/app_red_social/public/";
+        url = "http://localhost/Red-Social/public/";
     } else {
-        url = location.protocol + "//" + location.hostname + "/";
+        url = location.protocol + "//" + location.host + "/";
     }
 
+    console.log(url);
     function like() {
         $(".btn-like")
             .unbind("click")
